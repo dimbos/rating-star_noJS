@@ -1,0 +1,35 @@
+.rating-count{
+    display: flex;
+    flex-direction: row-reverse;
+    /*центрируем*/
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-count input{
+    display: none;
+}
+
+.rating-count input + label{
+    font-size: 0;
+    display: block;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    background: url(img/rating-star.svg) no-repeat center / contain,
+                url(img/rating-star_fill.svg) no-repeat center / 0 0;
+}
+
+
+/*
+.rating-count input + label:hover,
+.rating-count input:checked + label{
+    background-image: url(img/rating-star_fill.svg);
+}
+*/
+.rating-count input + label:hover,
+.rating-count input + label:hover ~ label,
+.rating-count:not(:hover) input:checked + label,
+.rating-count:not(:hover) input:checked + label ~ label {
+  background-image: url(img/rating-star_fill.svg);
+}
